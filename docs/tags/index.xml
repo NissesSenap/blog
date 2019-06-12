@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Edvins random stuff site</title>
+    <link>https://nissessenap.github.io/blog/tags/</link>
+    <description>Recent content in Tags on Edvins random stuff site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="https://nissessenap.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>aviato</title>
+      <link>https://nissessenap.github.io/blog/tags/aviato/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/aviato/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bachman</title>
+      <link>https://nissessenap.github.io/blog/tags/bachman/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/bachman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pied piper</title>
+      <link>https://nissessenap.github.io/blog/tags/pied-piper/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/pied-piper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>belson</title>
+      <link>https://nissessenap.github.io/blog/tags/belson/</link>
+      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/belson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gavin</title>
+      <link>https://nissessenap.github.io/blog/tags/gavin/</link>
+      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/gavin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>https://nissessenap.github.io/blog/tags/hardware/</link>
+      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hooli</title>
+      <link>https://nissessenap.github.io/blog/tags/hooli/</link>
+      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/hooli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ceo</title>
+      <link>https://nissessenap.github.io/blog/tags/ceo/</link>
+      <pubDate>Sat, 01 Oct 2016 16:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/ceo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
