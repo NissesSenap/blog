@@ -1,28 +1,65 @@
 +++
-categories = ["ad"]
+categories = ["about", "introdcution"]
 comments = false
-date = "2016-10-02T15:59:13-04:00"
+date = "2019-07-21T15:59:13-04:00"
 draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["gavin", "belson", "hooli", "hardware"]
-title = "Gavin Belson"
-description = "A post about the amazingness of Gavin Belson"
+tags = ["edvin", "norling", "about"]
+title = "Edvin Norling"
+description = "First"
 
 +++
 
-Note: This article originally appeared in [CodeRag](http://www.coderag.com/10-facts-you-didnt-know-about-gavin-belson/).
+# First
 
-Gavin Belson’s name has long been synonymous with innovation—but beyond his work at Hooli, do we even know the man behind the rampant success? In a Code/Rag exclusive, Belson revealed to us 10 things about himself that aren’t common knowledge.
+## Hello Internet
 
-* He’s a nature fanatic! “It’s important to me that Hooli has an effective recycling program, and a personal passion of mine is donating to elephant sanctuaries. In fact, I’ve recently spearheaded the creation of Hooli’s newest charity: the Hooli Elephant Wildlife Trust.”
-* He likes to go analog! His company may have been founded on email, but Belson has a soft spot for the written word. “There’s something nostalgic about receiving a letter—it’s a message from the past.”
-* He’s an honorary shaman! “I studied at the Institute of Spiritual Therapy and Vision Quests, where I was honored with the title of shaman. The Institute has fundamentally furthered my understanding of the world and its capacity for greatness.”
-* His favorite pizza topping is pepperoni! “Uncured, preferably, with some aged parmesan.”
-* He drives a Tesla! “Black. I try not to bee too conspicuous. And of course, the benefit to the environment is incomparable.”
-* His health is important to him! “I eat at least one piece of unprocessed fruit a day.”
-* He has bad habits too! “I never reboot my laptop. I know it’s bad, but I’m always in a hurry.”
-* He doesn’t have a Nobel Peace Prize…yet! “It’s a common misconception, especially with the amount of charity work I do with Hooli, and sometimes people associate my status as a shaman with working towards world peace, which of course is something I’m striving for.”
-* He’s loyal to his barber! “I’ve been going to the same barber for years—he was based in Palo Alto, but I’ve convinced him to move to the South Bay.”
-* He really, really loves animals! “I would say I’m a cat person. And a dog person. I’m an animal person, and I don’t just mean that human beings are animals. Did you know the African bush elephant is still an endangered species? Programs like the Hooli Elephant Wildlife Trust won’t save them immediately, but it’s a start.”
+So It's time for me to get a blog.
+
+Heads up, I like to explain how i think when I write text, so some parts might be a bit drawn out. But hopefully this place might be usefull for you as well.
+
+I will mostly use this blog to write about IT but it's possible I will mention something about running or any of my other intrests.
+
+## What I have done
+
+I started my work at a small IT company in Gothenburg called Zetup now named [Nordlo](https://nordlo.com).
+
+Afther that I joined [Ericsson](https://www.ericsson.com) working as a ICT engineer (supporting internal RND and testing).
+
+Until then I worked allot with:
+
+* Linux
+* Infrastrucuture As Code (IAC)
+* Monitoring
+* Python
+* HPC
+* CI/CD
+
+But in 2017 i joined [Alten](https://www.alten.se/) and started working more as a devops enginner as a consultant at Ericsson in a RND project called [CVC][cvc_link] helping out to send data from cars to the cloud.
+
+I also became scrum master, being a scrum master was very intresting and i learnet so much but I feelt that i want to have more time for technology so i left the project after about 7 motnhs.
+
+From 2018 I took a role as Technical Speciallist at Alten working 50% inhouse supporting other engineers with day to day tasks, technical pre-sale, technical intervews, etc.
+The other 50% I worked with Kubernetes at Ericsson developing generic services for 5G as a devops engineer.
+
+## What will happen in the future
+
+So now you know the fast version of my professional life.
+
+After the summer of 2019 I'm joning [RedHat](https://www.redhat.com/) (IBM depending on who you ask) as a openshift consultant.
+
+In the future I will most likley focus allot on:
+
+* Kubernetes
+* Openshift
+* cloud
+* CI/CD
+* IAC (Infrastrucutre As Code)
+* Linux
+
+I think all of us have tested some tool that seemed cool and then didn't start to use it day to day.
+6 months later you need it again and you have no idea what you have done and you almost have to start from scratch, hopefully I can remove some of the restart time for both you and me.
+
+[cvc_link]: https://www.ericsson.com/en/internet-of-things/automotive/connected-vehicle-cloud

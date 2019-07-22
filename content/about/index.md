@@ -1,21 +1,25 @@
 +++
-categories = ["ad"]
+categories = ["about"]
 comments = false
-date = "2016-10-02T15:59:13-04:00"
+date = "2019-07-21T15:59:13-04:00"
 draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["gavin", "belson", "hooli", "hardware"]
-title = "Gavin Belson"
-description = "A post about the amazingness of Gavin Belson"
+tags = ["edvin", "norling", "about"]
+title = "Edvin Norling"
+description = "About page for my blog"
 
 +++
 
+### So about me and this blog
 
-Erlich administers the Hacker Hostel, a tech incubator where Richard, Big Head, Dinesh, and Gilfoyle live and work in exchange for 10 percent of their potential businesses. Erlich clings to his glory days, when he sold aviation start-up Aviato, a move that, at least in his mind, qualifies him to be a svengali lording over other tech nerds. He still drives a car emblazoned with multiple Aviato logos and smokes copious amounts of weed.[1]
+As you have guessed my name is Edvin, I live in Sweden, Gothenburg and I have worked with IT for about 8 years now.
 
-In Fiduciary Duties, a drunk Richard makes Erlich a Pied Piper board member, a decision he later regrets.
+I will mostly use this blog to write about IT but it's possible i will mention something about running or any of my other intrests.
 
-In Two Days of the Condor, it is revealed that Erlich no longer codes due to carpal tunnel syndrome.
+This is mostly a way for me to save what Im doing and if someone else can use it even better.
 
+If you want to read some more info about you can check out [my first blog entry]({{< ref "/blog/first.md" >}})
+
+I haven't learnt Twitter so if you want to reach out do it on the kubernetes slack (edvin), my email or linkedin.
