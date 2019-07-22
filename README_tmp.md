@@ -6,7 +6,7 @@
 
 ### Add the goa theme
 
-```git submodule add https://github.com/NissesSenap/hugo-goa.git themes/goa```
+```git submodule add https://github.com/luizdepra/hugo-coder.git themes/coder```
 
 ### If the submoudle already is added:
 
@@ -22,4 +22,4 @@
 
 ### Build the homepage and put in to docs folder
 
-hugo -t goa -d docs
+hugo -t coder -d docs

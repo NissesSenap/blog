@@ -1,6 +1,5 @@
 ## Basic Configuration
 
-# baseurl = "https://shenoybr.github.io/hugo-goa-demo/"
 baseurl = "https://nissessenap.github.io/blog/"
 builddrafts = false
 canonifyurls = false
@@ -10,58 +9,110 @@ contentdir = "content"
 layoutdir = "layouts"
 publishdir = "docs"
 
-title = "Edvins random stuff site"
-
-
-theme = "goa"
+title = "Running IT"
 
 ## Hugo Built-in Features
 # disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
 googleAnalytics = "XYZ"
 enableRobotsTXT = true
 
-## Site Settings
+theme = "coder"
+
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+# disqusShortname = "yourdiscussshortname"
+
 [params]
-author = "Edvin Norling"
-intro = "My head in the clouds"
-description = "Doing random stuff within computers and devops. <br/> + Trail running and see the world"
-authorimage = "headshot.jpg"
-dateformat = "Jan 2, 2006"
+    keywords = "blog,developer,personal"
+    info = "My head in the clouds"
+    author = "Edvin Norling"
+    description = "Doing random stuff within computers and devops. <br/> + Trail running and see the world"
+    dateformat = "Jan 2, 2006"
 
-## Site Meta Settings
-[params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
+    avatarurl = "/img/headshot.jpg"
+    footercontent = "Doing random stuff within computers and devops."
 
-## Social Accounts
-[params.social]
-github = "NissesSenap"
-instagram = "nisse_senap"
-linkedin = "edvin-norling-54832135"
-strava = "28887261"
-email = "edvin.norling@gmail.com"
+    hideCredits = false
+    hideCopyright = false
 
-## Extras
-[params.extra]
-copyright = "© 2019. Edvin Norling. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
-poweredby = true
-highlightjs = true
-socialmarkup = true
+    # Git Commit in Footer, uncomment the line below to enable it.
+    commit = ""
 
+    rtl = false
 
-## Main Menu
-[[menu.main]]
-    name = "blog"
-    weight = 100
-    identifier = "blog"
-    url = "/blog/"
-[[menu.main]]
-    name = "about"
-    identifier = "about"
-    weight = 200
-    url = "/about/"
-[[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
-    weight = 300
-    url = "/coderag/"
+    # Use inverted colors
+    inverted = false
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Custom CSS
+    custom_css = []
+
+    # Custom JS
+    custom_js = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+# linkedin = "edvin-norling-54832135"
+# strava = "28887261"
+# email = "edvin.norling@gmail.com"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/NissesSenap"
+[[params.social]]
+    name = "Instagram"
+    icon = "fab fa-instagram"
+    weight = 2
+    url = "https://instagram.com/nisse_senap/"
+[[params.social]]
+    name = "Strava"
+    icon = "fab fa-strava"
+    weight = 2
+    url = "https://www.strava.com/athletes/28887261"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 4
+    url = "https://www.linkedin.com/in/edvin-norling-54832135"
+[[params.social]]
+    name = "Email"
+    icon = "fas fa-envelope"
+    weight = 5
+    url = "mailto:edvin.norling@gmail.com"
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [[languages.en.menu.main]]
+        name = "About"
+        weight = 1
+        url = "/about/"
+
+        [[languages.en.menu.main]]
+        name = "Blog"
+        weight = 2
+        url = "/blog/"
+
+        #[[languages.en.menu.main]]
+        #name = "Projects"
+        #weight = 3
+        #url = "/projects/"
+
+        [[languages.en.menu.main]]
+        name = "Contact me"
+        weight = 5
+        url = "/contact/"
