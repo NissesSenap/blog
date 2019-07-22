@@ -16,7 +16,7 @@ title = "Running IT"
 googleAnalytics = "XYZ"
 enableRobotsTXT = true
 
-theme = "coder"
+theme = "hugo-coder"
 
 defaultcontentlanguage = "en"
 

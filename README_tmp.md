@@ -6,11 +6,11 @@
 
 ### Add the goa theme
 
-```git submodule add https://github.com/luizdepra/hugo-coder.git themes/coder```
+```git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder```
 
-### If the submoudle already is added:
+### If the submoudle already is added
 
-```git submodule update --init --recursiv```
+```git submodule update --init --recursive```
 
 ### Start hugo
 
