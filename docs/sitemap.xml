@@ -3,26 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nissessenap.github.io/blog/blog/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nissessenap.github.io/blog/categories/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/about/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/blog/first/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/tags/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/categories/about/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/tags/about/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/tags/edvin/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/categories/introdcution/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/tags/norling/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nissessenap.github.io/blog/coderag/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/tags/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -47,22 +93,6 @@
     <loc>https://nissessenap.github.io/blog/tags/pied-piper/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/blog/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/about/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/blog/first/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
   </url>
   
   <url>
@@ -97,23 +127,6 @@
   <url>
     <loc>https://nissessenap.github.io/blog/tags/hooli/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/blog/second/</loc>
-    <lastmod>2016-10-01T16:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/tags/ceo/</loc>
-    <lastmod>2016-10-01T16:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/categories/propaganda/</loc>
-    <lastmod>2016-10-01T16:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Edvins random stuff site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 15:59:13 -0400</lastBuildDate>
     
 	<atom:link href="https://nissessenap.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>about</title>
+      <link>https://nissessenap.github.io/blog/tags/about/</link>
+      <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>edvin</title>
+      <link>https://nissessenap.github.io/blog/tags/edvin/</link>
+      <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/edvin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>norling</title>
+      <link>https://nissessenap.github.io/blog/tags/norling/</link>
+      <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
+      
+      <guid>https://nissessenap.github.io/blog/tags/norling/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>aviato</title>
@@ -71,15 +98,6 @@
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
       <guid>https://nissessenap.github.io/blog/tags/hooli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ceo</title>
-      <link>https://nissessenap.github.io/blog/tags/ceo/</link>
-      <pubDate>Sat, 01 Oct 2016 16:59:13 -0400</pubDate>
-      
-      <guid>https://nissessenap.github.io/blog/tags/ceo/</guid>
       <description></description>
     </item>
     

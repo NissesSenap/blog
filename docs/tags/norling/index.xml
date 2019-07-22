@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Edvins random stuff site</title>
-    <link>https://nissessenap.github.io/blog/</link>
-    <description>Recent content on Edvins random stuff site</description>
+    <title>norling on Edvins random stuff site</title>
+    <link>https://nissessenap.github.io/blog/tags/norling/</link>
+    <description>Recent content in norling on Edvins random stuff site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 21 Jul 2019 15:59:13 -0400</lastBuildDate>
     
-	<atom:link href="https://nissessenap.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nissessenap.github.io/blog/tags/norling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -31,26 +31,6 @@ This is mostly a way for me to save what Im doing and if someone else can use it
       <description>First Hello Internet So It&amp;rsquo;s time for me to get a blog.
 Heads up, I like to explain how i think when I write text, so some parts might be a bit drawn out. But hopefully this place might be usefull for you as well.
 I will mostly use this blog to write about IT but it&amp;rsquo;s possible I will mention something about running or any of my other intrests.</description>
-    </item>
-    
-    <item>
-      <title>CodeRag</title>
-      <link>https://nissessenap.github.io/blog/coderag/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://nissessenap.github.io/blog/coderag/</guid>
-      <description>Notes: This article originally appeared in CodeRag.
-Code/Rag has always been more than just another online tech blog. We strive to be part of the tech community—serving an essential, fundamental look at what’s going on in the valley. It’s why our tagline is “Know Your Code.” We think a tech news publication should know the basics. Be the source. Get down to brass tacks. We can do that because we’re part of the very ecosystem we’re reporting on.</description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://nissessenap.github.io/blog/blog/kubernetes-nice/</link>
-      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
-      
-      <guid>https://nissessenap.github.io/blog/blog/kubernetes-nice/</guid>
-      <description>I think kubernetes is great.
-  </description>
     </item>
     
   </channel>
