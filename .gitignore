@@ -11,8 +11,11 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Remove hugo .history folder
+# vscode
 .history
+
+#Hugo
+resources/
 
 # Nodejs stuff
 node_modules
