@@ -1,4 +1,4 @@
-# Edvin HUGO page
+# Edvin Hugo page
 
 ### Add a new site
 
@@ -12,7 +12,7 @@
 
 ```git submodule update --init --recursive```
 
-### Start hugo
+### Start Hugo
 
 ```hugo server -w -v```
 
@@ -22,4 +22,4 @@
 
 ### Build the homepage and put in to docs folder
 
-hugo -t coder -d docs
+```hugo -t coder -d docs```

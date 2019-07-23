@@ -12,7 +12,7 @@ description = "A post about the amazingness of Gavin Belson"
 
 +++
 
-I think kubernetes is great.
+I think Kubernetes is great.
 
 
 {{< figure src="/img/blog/kubernetes-nice/fig.png"

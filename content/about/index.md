@@ -16,10 +16,10 @@ description = "About page for my blog"
 
 As you have guessed my name is Edvin, I live in Sweden, Gothenburg and I have worked with IT for about 8 years now.
 
-I will mostly use this blog to write about IT but it's possible i will mention something about running or any of my other intrests.
+I will mostly use this blog to write about IT but it's possible i will mention something about running or any of my other interests.
 
-This is mostly a way for me to save what Im doing and if someone else can use it even better.
+This is mostly a way for me to save what I'm doing and if someone else can use it even better.
 
 If you want to read some more info about you can check out [my first blog entry]({{< ref "/blog/first.md" >}})
 
-I haven't learnt Twitter so if you want to reach out do it on the kubernetes slack (edvin), my email or linkedin.
+I haven't learnt Twitter so if you want to reach out do it on the Kubernetes slack (Edvin), my email or Linkedin.
