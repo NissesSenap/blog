@@ -37,13 +37,13 @@
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/about/</loc>
+    <loc>https://nissessenap.github.io/blog/tags/about/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/about/</loc>
+    <loc>https://nissessenap.github.io/blog/categories/about/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -127,6 +127,11 @@
   <url>
     <loc>https://nissessenap.github.io/blog/tags/hooli/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nissessenap.github.io/blog/series/</loc>
     <priority>0</priority>
   </url>
   
