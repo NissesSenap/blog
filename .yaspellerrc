@@ -1,0 +1,36 @@
+{
+  "format": "markdown",
+  "lang": "en",
+  "dictionary": [
+    "5G",
+    "Alten",
+    "CI",
+    "CVC",
+    "devops",
+    "Edvin",
+    "Gothenburg",
+    "HPC",
+    "IAC",
+    "ICT",
+    "img",
+    "Kubernetes",
+    "Linkedin",
+    "Nordlo",
+    "Norling",
+    "npm",
+    "Openshift",
+    "RedHat",
+    "RND",
+    "submodules",
+    "yaspellerrc",
+    "Zetup"
+  ],
+  "fileExtensions": [
+    ".md"
+  ],
+  "ignoreText": [
+    ["^`{3}([\\S]+)?([\\s\\S]+)`{3}", "gm"],
+    ["^\\+{3}[^>]*\\+{3}"]
+  ],
+  "ignoreUrls": true
+}

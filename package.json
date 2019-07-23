@@ -1,0 +1,30 @@
+{
+  "name": "edvin-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo -t hugo-coder -d docs",
+    "spellcheck": "yaspeller-ci content README_tmp.md",
+    "start": "hugo server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NissesSenap/blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Edvin Norling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notification-system/notification-system.github.io/issues"
+  },
+  "homepage": "https://github.com/notification-system/notification-system.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "postcss-cli": "^6.1.3",
+    "yaspeller-ci": "^1.0.1"
+  },
+  "dependencies": {}
+}

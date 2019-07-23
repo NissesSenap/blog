@@ -13,3 +13,6 @@
 
 # Remove hugo .history folder
 .history
+
+# Nodejs stuff
+node_modules
