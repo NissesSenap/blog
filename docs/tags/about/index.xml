@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about on Running IT</title>
-    <link>https://nissessenap.github.io/blog/tags/about/</link>
+    <link>https://runningit.se/tags/about/</link>
     <description>Recent content in about on Running IT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 21 Jul 2019 15:59:13 -0400</lastBuildDate>
     
-	<atom:link href="https://nissessenap.github.io/blog/tags/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://runningit.se/tags/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Edvin Norling</title>
-      <link>https://nissessenap.github.io/blog/about/</link>
+      <link>https://runningit.se/about/</link>
       <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/about/</guid>
+      <guid>https://runningit.se/about/</guid>
       <description>So about me and this blog As you have guessed my name is Edvin, I live in Sweden, Gothenburg and I have worked with IT for about 8 years now.
 I will mostly use this blog to write about IT but it&amp;rsquo;s possible i will mention something about running or any of my other intrests.
 This is mostly a way for me to save what Im doing and if someone else can use it even better.</description>
@@ -24,10 +24,10 @@ This is mostly a way for me to save what Im doing and if someone else can use it
     
     <item>
       <title>Edvin Norling</title>
-      <link>https://nissessenap.github.io/blog/blog/first/</link>
+      <link>https://runningit.se/blog/first/</link>
       <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/blog/first/</guid>
+      <guid>https://runningit.se/blog/first/</guid>
       <description>First Hello Internet So It&amp;rsquo;s time for me to get a blog.
 Heads up, I like to explain how i think when I write text, so some parts might be a bit drawn out. But hopefully this place might be usefull for you as well.
 I will mostly use this blog to write about IT but it&amp;rsquo;s possible I will mention something about running or any of my other intrests.</description>

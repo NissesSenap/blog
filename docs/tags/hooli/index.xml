@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hooli on Running IT</title>
-    <link>https://nissessenap.github.io/blog/tags/hooli/</link>
+    <link>https://runningit.se/tags/hooli/</link>
     <description>Recent content in hooli on Running IT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 15:59:13 -0400</lastBuildDate>
     
-	<atom:link href="https://nissessenap.github.io/blog/tags/hooli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://runningit.se/tags/hooli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kubernetes</title>
-      <link>https://nissessenap.github.io/blog/blog/kubernetes-nice/</link>
+      <link>https://runningit.se/blog/kubernetes-nice/</link>
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/blog/kubernetes-nice/</guid>
+      <guid>https://runningit.se/blog/kubernetes-nice/</guid>
       <description>I think kubernetes is great.
   </description>
     </item>

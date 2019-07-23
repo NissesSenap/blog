@@ -1,6 +1,7 @@
 ## Basic Configuration
 
-baseurl = "https://nissessenap.github.io/blog/"
+# baseurl = "https://nissessenap.github.io/blog/"
+baseurl = "https://runningit.se"
 builddrafts = false
 canonifyurls = false
 languageCode = "en-US"

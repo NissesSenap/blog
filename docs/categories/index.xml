@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Running IT</title>
-    <link>https://nissessenap.github.io/blog/categories/</link>
+    <link>https://runningit.se/categories/</link>
     <description>Recent content in Categories on Running IT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 21 Jul 2019 15:59:13 -0400</lastBuildDate>
     
-	<atom:link href="https://nissessenap.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://runningit.se/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>about</title>
-      <link>https://nissessenap.github.io/blog/categories/about/</link>
+      <link>https://runningit.se/categories/about/</link>
       <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/categories/about/</guid>
+      <guid>https://runningit.se/categories/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>introdcution</title>
-      <link>https://nissessenap.github.io/blog/categories/introdcution/</link>
+      <link>https://runningit.se/categories/introdcution/</link>
       <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/categories/introdcution/</guid>
+      <guid>https://runningit.se/categories/introdcution/</guid>
       <description></description>
     </item>
     
     <item>
       <title>articles</title>
-      <link>https://nissessenap.github.io/blog/categories/articles/</link>
+      <link>https://runningit.se/categories/articles/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/categories/articles/</guid>
+      <guid>https://runningit.se/categories/articles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ad</title>
-      <link>https://nissessenap.github.io/blog/categories/ad/</link>
+      <link>https://runningit.se/categories/ad/</link>
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
-      <guid>https://nissessenap.github.io/blog/categories/ad/</guid>
+      <guid>https://runningit.se/categories/ad/</guid>
       <description></description>
     </item>
     

@@ -3,135 +3,135 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nissessenap.github.io/blog/blog/</loc>
+    <loc>https://runningit.se/blog/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/</loc>
+    <loc>https://runningit.se/categories/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/about/</loc>
+    <loc>https://runningit.se/about/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/blog/first/</loc>
+    <loc>https://runningit.se/blog/first/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/tags/</loc>
+    <loc>https://runningit.se/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/about/</loc>
+    <loc>https://runningit.se/tags/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/about/</loc>
+    <loc>https://runningit.se/tags/about/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/edvin/</loc>
+    <loc>https://runningit.se/categories/about/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/introdcution/</loc>
+    <loc>https://runningit.se/tags/edvin/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/norling/</loc>
+    <loc>https://runningit.se/categories/introdcution/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/coderag/</loc>
+    <loc>https://runningit.se/tags/norling/</loc>
+    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/coderag/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/articles/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nissessenap.github.io/blog/tags/aviato/</loc>
+    <loc>https://runningit.se/categories/articles/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/bachman/</loc>
+    <loc>https://runningit.se/tags/aviato/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/pied-piper/</loc>
+    <loc>https://runningit.se/tags/bachman/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/blog/kubernetes-nice/</loc>
+    <loc>https://runningit.se/tags/pied-piper/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/blog/kubernetes-nice/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/categories/ad/</loc>
+    <loc>https://runningit.se/categories/ad/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/belson/</loc>
+    <loc>https://runningit.se/tags/belson/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/gavin/</loc>
+    <loc>https://runningit.se/tags/gavin/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/hardware/</loc>
+    <loc>https://runningit.se/tags/hardware/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/tags/hooli/</loc>
+    <loc>https://runningit.se/tags/hooli/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nissessenap.github.io/blog/series/</loc>
+    <loc>https://runningit.se/series/</loc>
     <priority>0</priority>
   </url>
   
