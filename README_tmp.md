@@ -23,3 +23,15 @@
 ### Build the homepage and put in to docs folder
 
 ```hugo -t coder -d docs```
+
+### Wow
+
+``` bash
+git checkout -B blog
+# Perfrom changes
+git add <new files>
+git push --set-upstream origin blog
+# Create hej.md, should contain a pr msg
+hub pull-request -c -F hej.md
+# Now the CI should trigger.
+```
