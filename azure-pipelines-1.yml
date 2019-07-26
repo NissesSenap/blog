@@ -21,12 +21,16 @@ steps:
     wget https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BINARY)
     tar xzf $(HUGO_BINARY)
     rm -r $(HUGO_BINARY)
-    mv hugo /usr/bin
+    pwd
+    ls -la
+    chmod 755 ./hugo
   displayName: 'Install hugo'
 
 - bash: |
     git submodule update --init --recursive
-    hugo -t hugo-coder -d docs
+    pwd
+    ls -la
+    ./hugo -t hugo-coder -d docs
   displayName: "Add submodule and run hugo"
 
 - bash: |
