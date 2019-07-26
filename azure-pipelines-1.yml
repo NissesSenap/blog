@@ -28,15 +28,26 @@ steps:
 
 - bash: |
     git submodule update --init --recursive
-    pwd
-    ls -la
     ./hugo -t hugo-coder -d docs
-  displayName: "Add submodule and run hugo"
-
-- bash: |
+    git config --local user.name "Azure Pipelines"
+    git config --local user.email "azuredevops@runningit.se"
+    git status
     git add docs
-    git commit -m "CD after merge in blog branch $(date)"
-    git log
-    git show
-  displayName: "Git commit and push"
+    git commit -m "CD after merge in blog branch $(date) ***NO_CI***"
+  displayName: "Add submodule, run hugo and commit"
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: blog_rsa
+  displayName: 'Get the deploy key'
+
+- script: |
+    mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
+    chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    git remote set-url --push origin git@github.com:NissesSenap/blog.git
+    git push origin HEAD:master
+  displayName: 'Publish GitHub Pages'
+  condition: |
+    and(not(eq(variables['Build.Reason'], 'PullRequest')),
+        eq(variables['Build.SourceBranch'], 'refs/heads/master'))
