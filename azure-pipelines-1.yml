@@ -1,0 +1,53 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pr: none
+
+variables:
+  HUGO_VERSION: 0.55.6
+  HUGO_BINARY: hugo_$(HUGO_VERSION)_Linux-64bit.tar.gz
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- bash: |
+    wget https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BINARY)
+    tar xzf $(HUGO_BINARY)
+    rm -r $(HUGO_BINARY)
+    pwd
+    ls -la
+    chmod 755 ./hugo
+  displayName: 'Install hugo'
+
+- bash: |
+    git submodule update --init --recursive
+    ./hugo -t hugo-coder -d docs
+    git config --local user.name "Azure Pipelines"
+    git config --local user.email "azuredevops@runningit.se"
+    git status
+    git add docs
+    git commit -m "CD after merge in blog branch $(date) ***NO_CI***"
+  displayName: "Add submodule, run hugo and commit"
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: blog_rsa
+  displayName: 'Get the deploy key'
+
+- script: |
+    mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa
+    chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+    git remote set-url --push origin git@github.com:NissesSenap/blog.git
+    git push origin HEAD:master
+  displayName: 'Publish GitHub Pages'
+  condition: |
+    and(not(eq(variables['Build.Reason'], 'PullRequest')),
+        eq(variables['Build.SourceBranch'], 'refs/heads/master'))
