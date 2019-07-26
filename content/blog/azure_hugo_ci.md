@@ -7,7 +7,7 @@ showcomments = true
 slug = ""
 tags = ["CI", "devops", "hugo", "github"]
 title = "Hugo github CI using azure devops"
-description = "Building a Azure CI piepline for my hugo blog"
+description = "Building a Azure CI piepline for my Hugo blog"
 
 +++
 
@@ -78,7 +78,7 @@ You more or less push this [link][github_azure_app] and you point to the repo yo
 
 ### CI
 
-Now it's time to create the CI job wich in Azure Pipeline is a yaml file, you can find the update version here: [my Azure Pipeline CI file][azure_pipeline_ci]
+Now it's time to create the CI job which in Azure Pipeline is a yaml file, you can find the update version here: [my Azure Pipeline CI file][azure_pipeline_ci]
 
 ```yaml
 trigger:
@@ -196,15 +196,15 @@ I have taken most of this from a [Microsoft blog][azure_git_push].
 The deployment job will do the following
 
 * Only trigger on a merge to master, never on a PR
-* Set 2 variabels for reusability
-* Download hugo and chmod it, **NOTE** how to call the variabels
+* Set 2 variables for reusability
+* Download Hugo and chmod it, **NOTE** how to call the variables
 * Add my submodule, build the page to the docs folder
 * Add the changes to a commit
-* Download the secure file, it's reachable using envionrment variabels.
+* Download the secure file, it's reachable using environment variables.
 * Create the .ssh folder, add the private ssh-key
-* Add github as a known host
+* Add GitHub as a known host
 * Push to the master branch
-* Be extra sure we don't create a infinate loop.
+* Be extra sure we don't create a infinite loop.
 
 Now you should be able to run your own static webpage using GitHub for hosting, Hugo as generator and Azure Pipeline for CI/CD.
 
