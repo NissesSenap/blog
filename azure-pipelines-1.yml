@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pr: none
+
+variables:
+  HUGO_VERSION: 0.55.6
+  HUGO_BINARY: hugo_$(HUGO_VERSION)_Linux-64bit.tar.gz
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- bash: |
+    wget https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BINARY)
+    tar xzf $(HUGO_BINARY)
+    rm -r $(HUGO_BINARY)
+    mv hugo /usr/bin
+  displayName: 'Install hugo'
+
+- bash: |
+    git submodule update --init --recursive
+    hugo -t hugo-coder -d docs
+  displayName: "Add submodule and run hugo"
+
+- bash: |
+    git add docs
+    git commit -m "CD after merge in blog branch $(date)"
+    git log
+    git show
+  displayName: "Git commit and push"
+
