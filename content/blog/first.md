@@ -37,11 +37,11 @@ Until then I worked allot with:
 * HPC
 * CI/CD
 
-But in 2017 i joined [Alten](https://www.alten.se/) and started working more as a devops engineer as a consultant at Ericsson in an RND project called [CVC][cvc_link] helping out to send data from cars to the cloud.
+But in 2018 i joined [Alten](https://www.alten.se/) and started working more as a devops engineer as a consultant at Ericsson in an RND project called [CVC][cvc_link] helping out to send data from cars to the cloud.
 
 I also became scrum master, being a scrum master was very interesting and i learned so much but I felt that i want to have more time for technology so i left the project after about 7 months.
 
-From 2018 I took a role as Technical Specialist at Alten working 50% in house supporting other engineers with day to day tasks, technical pre-sale, technical interviews, etc.
+From January 2019 I took a role as Technical Specialist at Alten working 50% in house supporting other engineers with day to day tasks, technical pre-sale, technical interviews, etc.
 The other 50% I worked with Kubernetes at Ericsson developing generic services for 5G as a devops engineer.
 
 ## What will happen in the future
