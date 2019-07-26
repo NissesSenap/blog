@@ -29,23 +29,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>articles</title>
-      <link>https://runningit.se/categories/articles/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://runningit.se/categories/articles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ad</title>
-      <link>https://runningit.se/categories/ad/</link>
-      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
-      
-      <guid>https://runningit.se/categories/ad/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

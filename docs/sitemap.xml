@@ -4,7 +4,48 @@
   
   <url>
     <loc>https://runningit.se/blog/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/ci/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/blog/azure_hugo_ci/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/devops/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/github/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/hugo/</loc>
+    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -22,18 +63,6 @@
   <url>
     <loc>https://runningit.se/blog/first/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -63,70 +92,6 @@
   <url>
     <loc>https://runningit.se/tags/norling/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/coderag/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/categories/articles/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/aviato/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/bachman/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/pied-piper/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/blog/kubernetes-nice/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/categories/ad/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/belson/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/gavin/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/hardware/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/hooli/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
