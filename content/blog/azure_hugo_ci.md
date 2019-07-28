@@ -11,7 +11,7 @@ description = "Building a Azure CI piepline for my Hugo blog"
 
 +++
 
-H# Basic requirements
+## Basic requirements
 
 * Trigger CI system at PR (pull request)
 * Give feedback to the user that the PR have passed
