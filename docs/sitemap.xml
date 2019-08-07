@@ -3,6 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://runningit.se/categories/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/godaddy/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/iac/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/categories/it/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/posts/iac_blog_part1/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/posts/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/terraform/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://runningit.se/blog/</loc>
     <lastmod>2019-07-22T15:59:13-04:00</lastmod>
     <priority>0</priority>
@@ -17,18 +70,6 @@
   <url>
     <loc>https://runningit.se/blog/azure_hugo_ci/</loc>
     <lastmod>2019-07-22T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/</loc>
-    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/tags/</loc>
-    <lastmod>2019-07-22T15:59:13-04:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -50,18 +91,18 @@
   </url>
   
   <url>
-    <loc>https://runningit.se/categories/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
+    <loc>https://runningit.se/posts/azure_hugo_ci/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://runningit.se/tags/azure/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://runningit.se/about/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://runningit.se/blog/first/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
   </url>
   
@@ -84,15 +125,14 @@
   </url>
   
   <url>
-    <loc>https://runningit.se/categories/introdcution/</loc>
+    <loc>https://runningit.se/tags/norling/</loc>
     <lastmod>2019-07-21T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://runningit.se/tags/norling/</loc>
-    <lastmod>2019-07-21T15:59:13-04:00</lastmod>
-    <priority>0</priority>
+    <loc>https://runningit.se/posts/first/</loc>
+    <lastmod>2019-07-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -23,16 +23,5 @@ Tools My plan is to use the following tools:
  Azure Pipelines GitHub hub Hugo Yaspeller (to help me with my crappy spelling)  The reason why I chose Hugo as a static page generator is that I don&amp;rsquo;t want to use Jekyll (don&amp;rsquo;t like ruby) and it feels like a much more modern any way.</description>
     </item>
     
-    <item>
-      <title>Edvin Norling</title>
-      <link>https://runningit.se/blog/first/</link>
-      <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
-      
-      <guid>https://runningit.se/blog/first/</guid>
-      <description>First Hello Internet So It&amp;rsquo;s time for me to get a blog.
-Heads up, I like to explain how i think when I write text, so some parts might be a bit drawn out. But hopefully this place might be useful for you as well.
-I will mostly use this blog to write about IT but it&amp;rsquo;s possible I will mention something about running or any of my other interests.</description>
-    </item>
-    
   </channel>
 </rss>

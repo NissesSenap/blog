@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform on Running IT</title>
+    <link>https://runningit.se/tags/terraform/</link>
+    <description>Recent content in Terraform on Running IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://runningit.se/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Infrastructure As Code Blog part 1 Godaddy with Terraform</title>
+      <link>https://runningit.se/posts/iac_blog_part1/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/posts/iac_blog_part1/</guid>
+      <description>Background As you know if you have read my last blog entry  I use GitHub to host my static page and Azure Pipeline for CI/CD. I have chosen Godaddy to be my DNS provider, the biggest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.</description>
+    </item>
+    
+  </channel>
+</rss>

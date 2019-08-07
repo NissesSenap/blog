@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Running IT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 22 Jul 2019 15:59:13 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://runningit.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Godaddy</title>
+      <link>https://runningit.se/tags/godaddy/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/tags/godaddy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IAC</title>
+      <link>https://runningit.se/tags/iac/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/tags/iac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terraform</title>
+      <link>https://runningit.se/tags/terraform/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/tags/terraform/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CI</title>
@@ -44,6 +71,15 @@
       <pubDate>Mon, 22 Jul 2019 15:59:13 -0400</pubDate>
       
       <guid>https://runningit.se/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://runningit.se/tags/azure/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/tags/azure/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Running IT</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 21 Jul 2019 15:59:13 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://runningit.se/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IT</title>
+      <link>https://runningit.se/categories/it/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/categories/it/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>about</title>
@@ -17,15 +26,6 @@
       <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
       
       <guid>https://runningit.se/categories/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>introdcution</title>
-      <link>https://runningit.se/categories/introdcution/</link>
-      <pubDate>Sun, 21 Jul 2019 15:59:13 -0400</pubDate>
-      
-      <guid>https://runningit.se/categories/introdcution/</guid>
       <description></description>
     </item>
     

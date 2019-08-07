@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Edvin Norling">
+    <meta name="description" content="Doing random stuff within computers and devops. &lt;br/&gt; &#43; Trail running and see the world">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Infrastructure As Code Blog part 1 Godaddy with Terraform"/>
+<meta name="twitter:description" content="My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure"/>
+
+    <meta property="og:title" content="Infrastructure As Code Blog part 1 Godaddy with Terraform" />
+<meta property="og:description" content="My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://runningit.se/posts/iac_blog_part1/" />
+<meta property="article:published_time" content="2019-08-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-08-05T00:00:00&#43;00:00"/>
+
+
+    
+      <base href="https://runningit.se/posts/iac_blog_part1/">
+    
+    <title>
+  Infrastructure As Code Blog part 1 Godaddy with Terraform · Running IT
+</title>
+
+    
+      <link rel="canonical" href="https://runningit.se/posts/iac_blog_part1/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.6" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://runningit.se">
+      Running IT
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/contact/">Contact me</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Infrastructure As Code Blog part 1 Godaddy with Terraform</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-08-05T00:00:00Z'>
+                Aug 5, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              5 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="/categories/it/">IT</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="/tags/iac/">IAC</a>
+      <span class="separator">•</span>
+    <a href="/tags/terraform/">Terraform</a>
+      <span class="separator">•</span>
+    <a href="/tags/godaddy/">Godaddy</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+
+<h2 id="background">Background</h2>
+
+<p>As you know if you have read my <a href="https://runningit.se/posts/azure_hugo_ci/">last blog entry </a> I use GitHub to host my static page and Azure Pipeline for CI/CD.
+I have chosen Godaddy to be my DNS provider, the biggest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.</p>
+
+<h2 id="why-terraform">Why Terraform</h2>
+
+<p>So why do I choose Terraform you may ask?</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<ul>
+<li>Support multiple SaaS/PaaS and most of it&rsquo;s features</li>
+<li>Broad support amongst the community</li>
+<li>Be fast to update if the SaaS/PaaS changes API</li>
+<li>Easy to extend with scripts or other tools</li>
+<li>Easy to get started</li>
+<li>From basic to advanced</li>
+<li>Good documentation</li>
+<li>Open-source</li>
+</ul>
+
+<h3 id="iac-options">IAC options</h3>
+
+<ul>
+<li>Terraform</li>
+<li>Ansible</li>
+<li>Puppet</li>
+<li>Chef</li>
+<li>SaltStack</li>
+<li>PaaS/SaaS own json/yaml or API</li>
+<li>Python lib</li>
+</ul>
+
+<p>There are many more options then these but above you can see some of the old and new options.</p>
+
+<p>From what I have found Terraform is the only option that passes all my requirements. For my blog Terraform should be more than enough but if I choose to do something more interesting in the future like setting up a Kubernetes cluster.
+I will be able to use Terraform together with Ansible or similar tools.</p>
+
+<h4 id="mutable-infrastructure-vs-immutable">Mutable Infrastructure vs Immutable</h4>
+
+<p>I also want to mention mutable vs immutable IAC.</p>
+
+<p>First to explain what mutable infrastructure is:
+Puppet, Ansible, Chef, SaltStack etc. is mutable, if you run PXE on-premise you call on your IAC tool and it configures it as defined, same thing in the cloud but your &ldquo;golden image&rdquo; calls on the IAC tool. If something needs to change for example DNS is to be updated we perform a change in our tool and it connects to the servers or the servers connect to the tool and get&rsquo;s the new configuration.</p>
+
+<p>Classically Terraform is immutable, if you want to update your DNS you reinstall your entire infrastructure. This is the dream for a lot of SRE and operations personnel, because it more or less removes the configuration drift between servers at least if you see this as a more or less monthly activity which it should be since you should patch all your servers about once a month.</p>
+
+<p>For those of you who haven&rsquo;t worked with operations probably don&rsquo;t think of this but you should never change anything outside of your <strong>IAC tool!</strong>
+I don&rsquo;t know how many times I have gotten requests to copy a server since we need a secondary test server or something and I copy the IAC config boot the server and asks the requester to verify that it works and I get informed it isn&rsquo;t working. In about 99% of the time this is due to someone have done a manual &ldquo;quick&rdquo; fix to make something work and haven&rsquo;t committed in to your IAC tool.</p>
+
+<p>Great then we reinstall all our servers once a month with the latest patches, config and problem is solved?
+Well no the problem is that reality isn&rsquo;t that simple.
+Currently it&rsquo;s extremely hard to reinstall servers for every configuration change. Anything that stores state is a pain overall, I know that the Kubernetes community is working on ways of handling storage and databases in an easier way but most of us haven&rsquo;t come that far in our infrastructure (Netflix and other companies like it is the shining star no the standard).
+Licenses for special applications is also very hard, normally you need to provide at least three physical servers (you want high availability) with your mac addresses and your server serial number to make sure you can only serve licenses from these servers and thus making sure you only use the amount of licences that you have.
+I haven&rsquo;t worked with these kind of issues in 18 months so I don&rsquo;t know if tools like FLEXLM have given some cloud solutions but to my knowledge it&rsquo;s still a pain.</p>
+
+<p>If you want to read about Infrastructure As Code I can really recommend a <a href="http://shop.oreilly.com/product/0636920039297.do">book</a> by Kief Morris (I don&rsquo;t get paid by O’Reilly for this, i just think it&rsquo;s a great book).</p>
+
+<p>This is why <strong>I</strong> think you should use Terraform as a base to declare your infrastructure (how many of everything, on what network etc.) and Ansible to handle small config changes on the servers.
+I still think you should make it &ldquo;hard&rdquo; for users to login directly to your servers unless they have a good reason to. In short it&rsquo;s only Ansible that should login to your server and perform changes. The users should only use the application from their client.
+I want to NOTE that containers is something else, the applications that you build today should be built in such a way that we can scale it up and down seamlessly using a tool like Kubernetes.</p>
+
+<h2 id="godaddy-terraform">Godaddy Terraform</h2>
+
+<p>I assume that you already have installed Terraform and have some basic knowledge about it&rsquo;s syntax.
+There is no official Terraform plugin from Hashicorp as described in this <a href="https://github.com/hashicorp/terraform/issues/3673">issue</a>.
+But we are in luck the community have <a href="https://github.com/n3integration/terraform-godaddy">created one</a>.
+For instructions on how to install the plugin please follow the <a href="https://github.com/n3integration/terraform-godaddy#api-key">README</a> in the repo.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Doing random stuff within computers and devops.</p>
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'XYZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>azure on Running IT</title>
+    <link>https://runningit.se/tags/azure/</link>
+    <description>Recent content in azure on Running IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://runningit.se/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo github CI using azure devops</title>
+      <link>https://runningit.se/posts/azure_hugo_ci/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/posts/azure_hugo_ci/</guid>
+      <description>Basic requirements  Trigger CI system at PR (pull request) Give feedback to the user that the PR have passed When I merge the pull, automatically publish my updated blog.  The last one is already solved thanks to that i use GitHub static page to share my homepage.
+Tools My plan is to use the following tools:
+ Azure Pipelines GitHub hub Hugo Yaspeller (to help me with my crappy spelling)  The reason why I chose Hugo as a static page generator is that I don&amp;rsquo;t want to use Jekyll (don&amp;rsquo;t like ruby) and it feels like a much more modern any way.</description>
+    </item>
+    
+  </channel>
+</rss>
