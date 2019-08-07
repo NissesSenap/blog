@@ -20,6 +20,6 @@ I will mostly use this blog to write about IT but it's possible i will mention s
 
 This is mostly a way for me to save what I'm doing and if someone else can use it even better.
 
-If you want to read some more info about you can check out [my first blog entry]({{< ref "/blog/first.md" >}})
+If you want to read some more info about you can check out [my first blog entry]({{< ref "/posts/first.md" >}})
 
 I haven't learnt Twitter so if you want to reach out do it on the Kubernetes slack (Edvin), my email or Linkedin.

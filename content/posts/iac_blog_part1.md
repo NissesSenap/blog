@@ -1,22 +1,20 @@
 +++
-categories = ["IAC"]
 comments = false
-date = "2019-08-05T15:59:13-04:00"
+date = "2019-08-05"
 draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
+categories = ["IT"]
 tags = ["IAC", "Terraform", "Godaddy"]
 title = "Infrastructure As Code Blog part 1 Godaddy with Terraform"
 description = "My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure"
 
 +++
 
-# Infrastructure As Code using Terraform
-
 ## Background
 
-As you know if you have read my [last blog entry ]({{< ref "/blog/azure_hugo_ci.md" >}}) I use GitHub ti host my static page and Azure Pipeline for CI/CD.
+As you know if you have read my [last blog entry ]({{< ref "/posts/azure_hugo_ci.md" >}}) I use GitHub ti host my static page and Azure Pipeline for CI/CD.
 I have choosen Godaddy to be my DNS provider, the bigest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.
 
 ## Why Terraform

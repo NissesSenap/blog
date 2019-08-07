@@ -1,11 +1,12 @@
 +++
 comments = false
-date = "2019-07-22T15:59:13-04:00"
+date = "2019-07-22"
 draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["CI", "devops", "hugo", "github"]
+categories = ["IT"]
+tags = ["CI", "devops", "hugo", "github", "azure"]
 title = "Hugo github CI using azure devops"
 description = "Building a Azure CI piepline for my Hugo blog"
 

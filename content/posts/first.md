@@ -1,18 +1,15 @@
 +++
-categories = ["about", "introdcution"]
 comments = false
-date = "2019-07-21T15:59:13-04:00"
+date = "2019-07-21"
 draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["edvin", "norling", "about"]
-title = "Introduction"
+categories = ["about"]
+title = "First"
 description = "First"
 
 +++
-
-# First
 
 ## Hello Internet
 
