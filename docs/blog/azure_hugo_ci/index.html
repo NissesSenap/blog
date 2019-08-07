@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Edvin Norling">
+    <meta name="description" content="Doing random stuff within computers and devops. &lt;br/&gt; &#43; Trail running and see the world">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo github CI using azure devops"/>
+<meta name="twitter:description" content="Building a Azure CI piepline for my Hugo blog"/>
+
+    <meta property="og:title" content="Hugo github CI using azure devops" />
+<meta property="og:description" content="Building a Azure CI piepline for my Hugo blog" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://runningit.se/blog/azure_hugo_ci/" />
+<meta property="article:published_time" content="2019-07-22T15:59:13-04:00"/>
+<meta property="article:modified_time" content="2019-07-22T15:59:13-04:00"/>
+
+
+    
+      <base href="https://runningit.se/blog/azure_hugo_ci/">
+    
+    <title>
+  Hugo github CI using azure devops · Running IT
+</title>
+
+    
+      <link rel="canonical" href="https://runningit.se/blog/azure_hugo_ci/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.6" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://runningit.se">
+      Running IT
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/blog/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="/contact/">Contact me</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Hugo github CI using azure devops</h1>
+    </header>
+
+    
+
+<p>H# Basic requirements</p>
+
+<ul>
+<li>Trigger CI system at PR (pull request)</li>
+<li>Give feedback to the user that the PR have passed</li>
+<li>When I merge the pull, automatically publish my updated blog.</li>
+</ul>
+
+<p>The last one is already solved thanks to that i use GitHub static page to share my homepage.</p>
+
+<h2 id="tools">Tools</h2>
+
+<p>My plan is to use the following tools:</p>
+
+<ul>
+<li>Azure Pipelines</li>
+<li>GitHub</li>
+<li><a href="https://github.com/github/hub">hub</a></li>
+<li>Hugo</li>
+<li><a href="https://github.com/hcodes/yaspeller">Yaspeller</a> (to help me with my crappy spelling)</li>
+</ul>
+
+<p>The reason why I chose Hugo as a static page generator is that I don&rsquo;t want to use Jekyll (don&rsquo;t like ruby) and it feels like a much more modern any way.
+I have worked with Gerrit and played with Gitlab, and Bitbucket and they all work just fine but most people use GitHub today and I want to use something that I most likely will use for my source-control in the future.</p>
+
+<h3 id="why-do-i-pick-azure">Why do i pick Azure</h3>
+
+<p>Today we have many many options for CI/CD systems that is integrated with <a href="https://github.com/marketplace/category/continuous-integration">GitHub</a>.
+I won&rsquo;t go through my reason why I thought X was better then Y but for me had the following main options:</p>
+
+<ul>
+<li>TravisCI</li>
+<li>CircleCI</li>
+<li>Azure Pipelines</li>
+<li>Google Cloud Build</li>
+<li>Codefresh</li>
+</ul>
+
+<p>TravisCI was among the early CI systems that was enabled for free to open-source projects. I have contributed to a number of puppet modules that used TravisCI and it all worked great.
+But i would like to use something else, so it&rsquo;s not really an option for me.
+So in enters the rest of the options.</p>
+
+<p>In the end I choose <strong>Azure Pipelines</strong>, the main reasons:</p>
+
+<ul>
+<li>They have great documentation overall.</li>
+<li>If the documentation is bad they have it all open on GitHub and you can create a issue or a pull-request to fix it. Something other cloud providers is missing.</li>
+<li>It&rsquo;s one of the big three cloud company&rsquo;s so it&rsquo;s a big chance of using this knowledge in the future.</li>
+<li>I can use Terraform or other IAC solutions to create my CI system (something I will explore in the future).</li>
+</ul>
+
+<h2 id="detailed-ci-flow">Detailed CI flow</h2>
+
+<p>Even though I&rsquo;m alone on this project I need to define some WoW (Way Of Working), or at least if i want to be able to run automated CI systems and get feedback from my pushes. It&rsquo;s kind of to late to run a spelling check if I just push the code directly to the repo.</p>
+
+<p>My current plan looks like this:</p>
+
+<ul>
+<li>User create blog branch</li>
+<li>Write new blog entry</li>
+<li>Push the blog branch to the repo</li>
+<li>Create a GitHub pull-request</li>
+<li>Start the CI</li>
+<li>If CI passes report back to GitHub as a message in the pull-request</li>
+<li>Merge the PR</li>
+<li>Azure Pipeline triggers a build of Hugo to the /docs folder and pushes the changes directly to the master branch</li>
+</ul>
+
+<h2 id="setup-azure-pipelines">Setup Azure Pipelines</h2>
+
+<p>I&rsquo;m assuming that you already got a azure account, if you don&rsquo;t go in to azure.com.</p>
+
+<p>First we need to sync our repo to azure pipeline, follow the Microsoft <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&amp;tabs=yaml#where-to-install-the-github-app">documentation</a> how to do it.
+You more or less push this <a href="https://github.com/apps/azure-pipelines">link</a> and you point to the repo you want azure Pipelines to have access to and trigger on.</p>
+
+<h3 id="ci">CI</h3>
+
+<p>Now it&rsquo;s time to create the CI job which in Azure Pipeline is a yaml file, you can find the update version here: <a href="https://github.com/NissesSenap/blog/blob/master/azure-pipelines.yml">my Azure Pipeline CI file</a></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">trigger:
+- blog
+
+pool:
+  vmImage: <span style="color:#0ff;font-weight:bold">&#39;ubuntu-latest&#39;</span>
+
+steps:
+- task: NodeTool@<span style="color:#ff0;font-weight:bold">0</span>
+  inputs:
+    versionSpec: <span style="color:#0ff;font-weight:bold">&#39;10.x&#39;</span>
+  displayName: <span style="color:#0ff;font-weight:bold">&#39;Install Node.js&#39;</span>
+
+- script: <span style="color:#0ff;font-weight:bold">|
+</span><span style="color:#0ff;font-weight:bold">    npm install</span>
+    npm run spellcheck
+  displayName: <span style="color:#0ff;font-weight:bold">&#39;npm install and build&#39;</span></code></pre></div>
+<p>The yaml file does the following:</p>
+
+<ul>
+<li>Only trigger when i push stuff to blog branch</li>
+<li>Define which os and node type to use</li>
+<li>Use a built in Azure function and get&rsquo;s node</li>
+<li>Install all npm dependencies</li>
+<li>Run the spellchecker</li>
+</ul>
+
+<p>Go to Azure DevOps -&gt; New Build Pipeline (under the current UI you will find it under the +) -&gt; Existing Azure Pipelines YAML file
+<figure>
+    <img src="/img/blog/azure_hugo_ci/add_pipeline.png" width="100%"/> 
+</figure>
+</p>
+
+<p>Save, commit and push to your repo.
+The CI job should now trigger on any PR from the blog branch.</p>
+
+<h3 id="prepare-the-cd">Prepare the CD</h3>
+
+<p>During the CD stage of the tipeline we want to be able to push a commit to GitHub.</p>
+
+<h4 id="github-deploykeys">GitHub deploykeys</h4>
+
+<p>First we need to add an GitHub <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">deploykey</a>.</p>
+
+<p>GitHub deploykey is a way for CI/CD systems to talk to GitHub using ssh keys. From a UX based os perfrom ssh-keygen and follow the instructions, if you already got a current ssh-keygen <strong>don&rsquo;t</strong> overwrite your current one.</p>
+
+<p>Go to your GitHub repo -&gt; settings -&gt; Deploy Keys and add your newly generated public key.</p>
+
+<figure>
+    <img src="/img/blog/azure_hugo_ci/github_deploykey.png" width="100%"/> 
+</figure>
+
+
+<h4 id="azure-secret-file">Azure secret file</h4>
+
+<p>Since the CD job needs to be able to push to our repo we need to add the private ssh-key to Azure. We will use a feature in Azure Pipeline called Secure files. This enabels us to save a file as a secret just as the name is hinting at.</p>
+
+<p>Open your Azure Pipeline -&gt; Libary -&gt; Secure files and add the private ssh-key.
+<figure>
+    <img src="/img/blog/azure_hugo_ci/azure_priv_key.png" width="100%"/> 
+</figure>
+</p>
+
+<p>The first time I ran my job i got an error saying my job didn&rsquo;t have access to the secure file.
+I coulden&rsquo;t find what option to add, but the popup gave me a question asking to fix it. Just push the button and it should work.</p>
+
+<p>Now we should be able to add the deployment job.</p>
+
+<h3 id="cd">CD</h3>
+
+<p>If I merge the PR my <a href="https://github.com/NissesSenap/blog/blob/master/azure-pipelines-1.yml">deployment job</a> should triggr.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">trigger:
+- master
+
+pr: none
+
+variables:
+  HUGO_VERSION: <span style="color:#ff0;font-weight:bold">0.55</span>.<span style="color:#ff0;font-weight:bold">6</span>
+  HUGO_BINARY: hugo_$(HUGO_VERSION)_Linux-64bit.tar.gz
+
+pool:
+  vmImage: <span style="color:#0ff;font-weight:bold">&#39;ubuntu-latest&#39;</span>
+
+steps:
+- bash: <span style="color:#0ff;font-weight:bold">|
+</span><span style="color:#0ff;font-weight:bold">    wget https://github.com/gohugoio/hugo/releases/download/v$(HUGO_VERSION)/$(HUGO_BINARY)</span>
+    tar xzf $(HUGO_BINARY)
+    rm -r $(HUGO_BINARY)
+    chmod <span style="color:#ff0;font-weight:bold">755</span> ./hugo
+  displayName: <span style="color:#0ff;font-weight:bold">&#39;Install hugo&#39;</span>
+
+- bash: <span style="color:#0ff;font-weight:bold">|
+</span><span style="color:#0ff;font-weight:bold">    git submodule update --init --recursive</span>
+    ./hugo -t hugo-coder -d docs
+    git config --local user.name <span style="color:#0ff;font-weight:bold">&#34;Azure Pipelines&#34;</span>
+    git config --local user.email <span style="color:#0ff;font-weight:bold">&#34;azuredevops@runningit.se&#34;</span>
+    git status
+    git add docs
+    git commit -m <span style="color:#0ff;font-weight:bold">&#34;CD after merge in blog branch $(date) ***NO_CI***&#34;</span>
+  displayName: <span style="color:#0ff;font-weight:bold">&#34;Add submodule, run hugo and commit&#34;</span>
+
+- task: DownloadSecureFile@<span style="color:#ff0;font-weight:bold">1</span>
+  inputs:
+    secureFile: blog_rsa
+  displayName: <span style="color:#0ff;font-weight:bold">&#39;Get the deploy key&#39;</span>
+
+- script: <span style="color:#0ff;font-weight:bold">|
+</span><span style="color:#0ff;font-weight:bold">    mkdir ~/.ssh &amp;&amp; mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_rsa</span>
+    chmod <span style="color:#ff0;font-weight:bold">700</span> ~/.ssh <span style="color:#0f0;font-weight:bold">&amp;&amp;</span> chmod <span style="color:#ff0;font-weight:bold">600</span> ~/.ssh/id_rsa
+    ssh-keyscan -t rsa github.com &gt;&gt; ~/.ssh/known_hosts
+    git remote set-url --push origin git@github.com:NissesSenap/blog.git
+    git push origin HEAD:master
+  displayName: <span style="color:#0ff;font-weight:bold">&#39;Publish GitHub Pages&#39;</span>
+  condition: <span style="color:#0ff;font-weight:bold">|
+</span><span style="color:#0ff;font-weight:bold">    and(not(eq(variables[&#39;Build.Reason&#39;], &#39;PullRequest&#39;)),</span>
+        eq(variables[<span style="color:#0ff;font-weight:bold">&#39;Build.SourceBranch&#39;</span>], <span style="color:#0ff;font-weight:bold">&#39;refs/heads/master&#39;</span>))</code></pre></div>
+<p>I have taken most of this from a <a href="https://cloudblogs.microsoft.com/opensource/2019/04/05/publishing-github-pages-from-azure-pipelines/">Microsoft blog</a>.
+The deployment job will do the following</p>
+
+<ul>
+<li>Only trigger on a merge to master, never on a PR</li>
+<li>Set 2 variables for reusability</li>
+<li>Download Hugo and chmod it, <strong>NOTE</strong> how to call the variables</li>
+<li>Add my submodule, build the page to the docs folder</li>
+<li>Add the changes to a commit</li>
+<li>Download the secure file, it&rsquo;s reachable using environment variables.</li>
+<li>Create the .ssh folder, add the private ssh-key</li>
+<li>Add GitHub as a known host</li>
+<li>Push to the master branch</li>
+<li>Be extra sure we don&rsquo;t create a infinite loop.</li>
+</ul>
+
+<p>Now you should be able to run your own static webpage using GitHub for hosting, Hugo as generator and Azure Pipeline for CI/CD.</p>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Doing random stuff within computers and devops.</p>
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'XYZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>
