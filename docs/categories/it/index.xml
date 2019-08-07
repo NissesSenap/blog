@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT on Running IT</title>
+    <link>https://runningit.se/categories/it/</link>
+    <description>Recent content in IT on Running IT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://runningit.se/categories/it/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Infrastructure As Code Blog part 1 Godaddy with Terraform</title>
+      <link>https://runningit.se/posts/iac_blog_part1/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/posts/iac_blog_part1/</guid>
+      <description>Background As you know if you have read my last blog entry  I use GitHub to host my static page and Azure Pipeline for CI/CD. I have chosen Godaddy to be my DNS provider, the biggest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.</description>
+    </item>
+    
+    <item>
+      <title>Hugo github CI using azure devops</title>
+      <link>https://runningit.se/posts/azure_hugo_ci/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://runningit.se/posts/azure_hugo_ci/</guid>
+      <description>Basic requirements  Trigger CI system at PR (pull request) Give feedback to the user that the PR have passed When I merge the pull, automatically publish my updated blog.  The last one is already solved thanks to that i use GitHub static page to share my homepage.
+Tools My plan is to use the following tools:
+ Azure Pipelines GitHub hub Hugo Yaspeller (to help me with my crappy spelling)  The reason why I chose Hugo as a static page generator is that I don&amp;rsquo;t want to use Jekyll (don&amp;rsquo;t like ruby) and it feels like a much more modern any way.</description>
+    </item>
+    
+  </channel>
+</rss>
