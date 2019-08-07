@@ -102,7 +102,7 @@ steps:
 
 The yaml file does the following:
 
-* Only trigger when i push stuff to blog branch
+* Only trigger when I push stuff to blog branch
 * Define which os and node type to use
 * Use a built in Azure function and get's node
 * Install all npm dependencies
