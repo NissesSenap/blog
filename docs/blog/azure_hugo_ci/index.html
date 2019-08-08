@@ -130,6 +130,27 @@
       <div>
         
 
+<h3 id="content">Content</h3>
+
+<ul>
+<li><a href="#basic-requirements">Basic requirements</a></li>
+<li><a href="#tools">Tools</a>
+
+<ul>
+<li><a href="#why-do-i-pick-azure">Why do i pick Azure</a></li>
+</ul></li>
+<li><a href="#detailed-ci-flow">Detailed CI flow</a></li>
+<li><a href="#setup-azure-pipelines">Setup Azure Pipelines</a>
+
+<ul>
+<li><a href="#ci">CI</a></li>
+<li><a href="#prepare-the-cd">Prepare the CD</a></li>
+<li><a href="#github-deploy-keys">GitHub deploy keys</a></li>
+<li><a href="#azure-secret-file">Azure secret file</a></li>
+<li><a href="#cd">CD</a></li>
+</ul></li>
+</ul>
+
 <h2 id="basic-requirements">Basic requirements</h2>
 
 <ul>
@@ -247,7 +268,7 @@ The CI job should now trigger on any PR from the blog branch.</p>
 
 <p>During the CD stage of the tipeline we want to be able to push a commit to GitHub.</p>
 
-<h4 id="github-deploykeys">GitHub deploykeys</h4>
+<h4 id="github-deploy-keys">GitHub deploy keys</h4>
 
 <p>First we need to add an GitHub <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">deploykey</a>.</p>
 
