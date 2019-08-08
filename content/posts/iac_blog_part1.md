@@ -9,8 +9,19 @@ categories = ["IT"]
 tags = ["IAC", "Terraform", "Godaddy"]
 title = "Infrastructure As Code Blog part 1 Godaddy with Terraform"
 description = "My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure"
-
 +++
+
+### Content
+
+- [Background](#background)
+- [Why Terraform](#why-terraform)
+  - [Requirements](#requirements)
+  - [IAC options](#iac-options)
+    - [Mutable Infrastructure vs Immutable](#mutable-infrastructure-vs-immutable)
+- [Godaddy Terraform](#godaddy-terraform)
+  - [Setting up Godaddy API key](#setting-up-godaddy-api-key)
+  - [Download the current config](#download-the-current-config)
+- [Future](#future)
 
 ## Background
 
@@ -25,26 +36,26 @@ I have the following needs:
 
 ### Requirements
 
-* Support multiple SaaS/PaaS and most of it's features
-* Broad support amongst the community
-* Be fast to update if the SaaS/PaaS changes API
-* Easy to extend with scripts or other tools
-* Easy to get started
-* From basic to advanced
-* Good documentation
-* Open-source
+- Support multiple SaaS/PaaS and most of it's features
+- Broad support amongst the community
+- Be fast to update if the SaaS/PaaS changes API
+- Easy to extend with scripts or other tools
+- Easy to get started
+- From basic to advanced
+- Good documentation
+- Open-source
 
 ### IAC options
 
 Bellow is the IAC options that i feel viable.
 
-* Terraform
-* Ansible
-* Puppet
-* Chef
-* SaltStack
-* PaaS/SaaS own json/yaml or API
-* Python lib
+- Terraform
+- Ansible
+- Puppet
+- Chef
+- SaltStack
+- PaaS/SaaS own json/yaml or API
+- Python lib
 
 There are many more options then these but above you can see some of the old and new tools.
 

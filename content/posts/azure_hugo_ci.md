@@ -12,11 +12,24 @@ description = "Building a Azure CI piepline for my Hugo blog"
 
 +++
 
+### Content
+
+- [Basic requirements](#basic-requirements)
+- [Tools](#tools)
+  - [Why do i pick Azure](#why-do-i-pick-azure)
+- [Detailed CI flow](#detailed-ci-flow)
+- [Setup Azure Pipelines](#setup-azure-pipelines)
+  - [CI](#ci)
+  - [Prepare the CD](#prepare-the-cd)
+    - [GitHub deploy keys](#github-deploy-keys)
+    - [Azure secret file](#azure-secret-file)
+  - [CD](#cd)
+
 ## Basic requirements
 
-* Trigger CI system at PR (pull request)
-* Give feedback to the user that the PR have passed
-* When I merge the pull, automatically publish my updated blog.
+- Trigger CI system at PR (pull request)
+- Give feedback to the user that the PR have passed
+- When I merge the pull, automatically publish my updated blog.
 
 The last one is already solved thanks to that i use GitHub static page to share my homepage.
 
@@ -24,11 +37,11 @@ The last one is already solved thanks to that i use GitHub static page to share 
 
 My plan is to use the following tools:
 
-* Azure Pipelines
-* GitHub
-* [hub][hub_link]
-* Hugo
-* [Yaspeller][yaspeller_git] (to help me with my crappy spelling)
+- Azure Pipelines
+- GitHub
+- [hub][hub_link]
+- Hugo
+- [Yaspeller][yaspeller_git] (to help me with my crappy spelling)
 
 The reason why I chose Hugo as a static page generator is that I don't want to use Jekyll (don't like ruby) and it feels like a much more modern any way.
 I have worked with Gerrit and played with Gitlab, and Bitbucket and they all work just fine but most people use GitHub today and I want to use something that I most likely will use for my source-control in the future.
@@ -38,11 +51,11 @@ I have worked with Gerrit and played with Gitlab, and Bitbucket and they all wor
 Today we have many many options for CI/CD systems that is integrated with [GitHub][github_ci].
 I won't go through my reason why I thought X was better then Y but for me had the following main options:
 
-* TravisCI
-* CircleCI
-* Azure Pipelines
-* Google Cloud Build
-* Codefresh
+- TravisCI
+- CircleCI
+- Azure Pipelines
+- Google Cloud Build
+- Codefresh
 
 TravisCI was among the early CI systems that was enabled for free to open-source projects. I have contributed to a number of puppet modules that used TravisCI and it all worked great.
 But i would like to use something else, so it's not really an option for me.
@@ -50,10 +63,10 @@ So in enters the rest of the options.
 
 In the end I choose **Azure Pipelines**, the main reasons:
 
-* They have great documentation overall.
-* If the documentation is bad they have it all open on GitHub and you can create a issue or a pull-request to fix it. Something other cloud providers is missing.
-* It's one of the big three cloud company's so it's a big chance of using this knowledge in the future.
-* I can use Terraform or other IAC solutions to create my CI system (something I will explore in the future).
+- They have great documentation overall.
+- If the documentation is bad they have it all open on GitHub and you can create a issue or a pull-request to fix it. Something other cloud providers is missing.
+- It's one of the big three cloud company's so it's a big chance of using this knowledge in the future.
+- I can use Terraform or other IAC solutions to create my CI system (something I will explore in the future).
 
 ## Detailed CI flow
 
@@ -61,14 +74,14 @@ Even though I'm alone on this project I need to define some WoW (Way Of Working)
 
 My current plan looks like this:
 
-* User create blog branch
-* Write new blog entry
-* Push the blog branch to the repo
-* Create a GitHub pull-request
-* Start the CI
-* If CI passes report back to GitHub as a message in the pull-request
-* Merge the PR
-* Azure Pipeline triggers a build of Hugo to the /docs folder and pushes the changes directly to the master branch
+- User create blog branch
+- Write new blog entry
+- Push the blog branch to the repo
+- Create a GitHub pull-request
+- Start the CI
+- If CI passes report back to GitHub as a message in the pull-request
+- Merge the PR
+- Azure Pipeline triggers a build of Hugo to the /docs folder and pushes the changes directly to the master branch
 
 ## Setup Azure Pipelines
 
@@ -102,11 +115,11 @@ steps:
 
 The yaml file does the following:
 
-* Only trigger when I push stuff to blog branch
-* Define which os and node type to use
-* Use a built in Azure function and get's node
-* Install all npm dependencies
-* Run the spellchecker
+- Only trigger when I push stuff to blog branch
+- Define which os and node type to use
+- Use a built in Azure function and get's node
+- Install all npm dependencies
+- Run the spellchecker
 
 Go to Azure DevOps -> New Build Pipeline (under the current UI you will find it under the +) -> Existing Azure Pipelines YAML file
 {{< figure src="/img/blog/azure_hugo_ci/add_pipeline.png" width="100%">}}
@@ -118,7 +131,7 @@ The CI job should now trigger on any PR from the blog branch.
 
 During the CD stage of the tipeline we want to be able to push a commit to GitHub.
 
-#### GitHub deploykeys
+#### GitHub deploy keys
 
 First we need to add an GitHub [deploykey][github_deploykeys].
 
@@ -196,16 +209,16 @@ steps:
 I have taken most of this from a [Microsoft blog][azure_git_push].
 The deployment job will do the following
 
-* Only trigger on a merge to master, never on a PR
-* Set 2 variables for reusability
-* Download Hugo and chmod it, **NOTE** how to call the variables
-* Add my submodule, build the page to the docs folder
-* Add the changes to a commit
-* Download the secure file, it's reachable using environment variables.
-* Create the .ssh folder, add the private ssh-key
-* Add GitHub as a known host
-* Push to the master branch
-* Be extra sure we don't create a infinite loop.
+- Only trigger on a merge to master, never on a PR
+- Set 2 variables for reusability
+- Download Hugo and chmod it, **NOTE** how to call the variables
+- Add my submodule, build the page to the docs folder
+- Add the changes to a commit
+- Download the secure file, it's reachable using environment variables.
+- Create the .ssh folder, add the private ssh-key
+- Add GitHub as a known host
+- Push to the master branch
+- Be extra sure we don't create a infinite loop.
 
 Now you should be able to run your own static webpage using GitHub for hosting, Hugo as generator and Azure Pipeline for CI/CD.
 
