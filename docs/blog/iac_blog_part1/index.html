@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Edvin Norling">
+    <meta name="description" content="Doing random stuff within computers and devops. &lt;br/&gt; &#43; Trail running and see the world">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Infrastructure As Code Blog part 1 Godaddy with Terraform"/>
+<meta name="twitter:description" content="My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure"/>
+
+    <meta property="og:title" content="Infrastructure As Code Blog part 1 Godaddy with Terraform" />
+<meta property="og:description" content="My first blog entry explaning how I use Terraform to handle Godaddy and the rest of my infrastructure" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://runningit.se/blog/iac_blog_part1/" />
+<meta property="article:published_time" content="2019-08-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-08-05T00:00:00&#43;00:00"/>
+
+
+    
+      <base href="https://runningit.se/blog/iac_blog_part1/">
+    
+    <title>
+  Infrastructure As Code Blog part 1 Godaddy with Terraform · Running IT
+</title>
+
+    
+      <link rel="canonical" href="https://runningit.se/blog/iac_blog_part1/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://runningit.se/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.6" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Running IT
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://runningit.se/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://runningit.se/blog/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://runningit.se/contact/">Contact me</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Infrastructure As Code Blog part 1 Godaddy with Terraform</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-08-05T00:00:00Z'>
+                Aug 5, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              8 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="/categories/it/">IT</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="/tags/iac/">IAC</a>
+      <span class="separator">•</span>
+    <a href="/tags/terraform/">Terraform</a>
+      <span class="separator">•</span>
+    <a href="/tags/godaddy/">Godaddy</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+
+<h2 id="background">Background</h2>
+
+<p>As you know if you have read my <a href="https://runningit.se/blog/azure_hugo_ci/">last blog entry </a> I use GitHub to host my static page and Azure Pipeline for CI/CD.
+I have chosen Godaddy to be my DNS provider, the biggest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.</p>
+
+<h2 id="why-terraform">Why Terraform</h2>
+
+<p>So why do I choose Terraform you may ask?</p>
+
+<p>I have the following needs:</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<ul>
+<li>Support multiple SaaS/PaaS and most of it&rsquo;s features</li>
+<li>Broad support amongst the community</li>
+<li>Be fast to update if the SaaS/PaaS changes API</li>
+<li>Easy to extend with scripts or other tools</li>
+<li>Easy to get started</li>
+<li>From basic to advanced</li>
+<li>Good documentation</li>
+<li>Open-source</li>
+</ul>
+
+<h3 id="iac-options">IAC options</h3>
+
+<p>Bellow is the IAC options that i feel viable.</p>
+
+<ul>
+<li>Terraform</li>
+<li>Ansible</li>
+<li>Puppet</li>
+<li>Chef</li>
+<li>SaltStack</li>
+<li>PaaS/SaaS own json/yaml or API</li>
+<li>Python lib</li>
+</ul>
+
+<p>There are many more options then these but above you can see some of the old and new tools.</p>
+
+<p>From what I have found Terraform is the only option that passes all my requirements.</p>
+
+<p>For my blog Terraform should be more than enough but if I choose to do something more interesting in the future like setting up a Kubernetes cluster.
+I will be able to use Terraform together with other tools like Ansible to handle minor configuration changes.</p>
+
+<h4 id="mutable-infrastructure-vs-immutable">Mutable Infrastructure vs Immutable</h4>
+
+<p>First to explain what mutable infrastructure is:</p>
+
+<p>Should you be able to change something to a server after you have installed it?
+Mutable says <strong>yes</strong> and immutable says <strong>no</strong>.</p>
+
+<p>But of course you need to patch and change config on servers, when following the Immutable module you should instead reinstall the server.
+The good thing with this is that you minimize configuration drift. Configuration drift the difference on the server from what you have defined in your IAC tool.
+This is a big issue since it overall mean that you have done some manual changes on the server and this makes operations, debugging and security much harder.</p>
+
+<p>Today there are tools available Terraform and <a href="www.packer.io">Packer</a> which makes it possible to be immutable.</p>
+
+<p>Puppet, Ansible, Chef, SaltStack etc. is classically mutable.
+You run your configuration during your initial setup and the tool calls or gets called by your IAC tool to make sure that the config stays the same.</p>
+
+<p>The immutable is the dream for a lots of SRE and operations personnel, but most environments isn&rsquo;t ready for it.
+In <strong>my personal opinion</strong> it&rsquo;s to much work to reinstall your environment for a single patch for minor config change.</p>
+
+<p>Handling anything that stores state is still a pain, I know that the Kubernetes community amongst others is working on ways of handling storage and databases in an easier way but most of us haven&rsquo;t come that far in our infrastructure (Netflix and other companies like it is the shining star not the standard).</p>
+
+<p>Licenses for special applications is also very hard, normally you need to provide at least three physical servers (you want high availability) with mac addresses and your server serial number to make sure you can only serve licenses from these servers and thus making sure you only use the amount of licences that you have.
+I haven&rsquo;t worked with these kind of issues in 18 months so I don&rsquo;t know if tools like FLEXLM have given some cloud solutions but to my knowledge they haven&rsquo;t and handling licenses is still a pain.</p>
+
+<p>If you want to read about Infrastructure As Code I can really recommend a <a href="http://shop.oreilly.com/product/0636920039297.do">book</a> by Kief Morris (I don&rsquo;t get paid by O’Reilly for this, i just think it&rsquo;s a great book).</p>
+
+<p>So why do I still choose Terraform?
+Well Terraform is a great way to declare the base of your infrastructure (how many of everything, on what network etc.) and my plan is to use Ansible to handle small config changes on the servers.
+I still think users shouldn&rsquo;t login directly to your servers unless they have a good reason to.
+In short it&rsquo;s only Ansible that should login to your server and perform changes, the users should only use the application from their client and not from the server.
+I want to <strong>NOTE</strong> that containers is something else, the applications that you build today should overall follow <a href="https://12factor.net/">The Twelve Factor App</a> thus building it in such a way that we can scale it up and down seamlessly using a tool like Kubernetes.</p>
+
+<h2 id="godaddy-terraform">Godaddy Terraform</h2>
+
+<p>So after my long ramble lets go in to using Terraform to configure Godaddy.</p>
+
+<p>I assume that you already have installed Terraform and have some basic knowledge about it&rsquo;s syntax.
+There is no official Terraform plugin from Hashicorp as described in this <a href="https://github.com/hashicorp/terraform/issues/3673">issue</a>.
+But we are in luck the community have <a href="https://github.com/n3integration/terraform-godaddy">created one</a>.
+For latest instructions on how to use the plugin please follow the <a href="https://github.com/n3integration/terraform-godaddy#api-key">README</a> in the repo.</p>
+
+<h3 id="setting-up-godaddy-api-key">Setting up Godaddy API key</h3>
+
+<p>When writing this Godaddy has two API:s one for <a href="https://developer.godaddy.com/getstarted">testing and one for production</a>.
+First you need to create a <a href="https://developer.godaddy.com/keys/">API key</a>, click &ldquo;Create New API Key&rdquo; choose the Production environment and you are good to go.
+<figure>
+    <img src="/img/blog/iac_blog_part1/gd_api.png" width="100%"/> 
+</figure>
+</p>
+
+<p>The plugin supports both environment variables and defining them as a variable in the tf file.
+I use environment variables.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#fff;font-weight:bold">export</span> GODADDY_API_KEY=e4N7aHtEpeoG_XUjkXCRb7pqYrzaQwDAwuc
+<span style="color:#fff;font-weight:bold">export</span> GODADDY_API_SECRET=MyAPISecret0000000</code></pre></div>
+<h3 id="download-the-current-config">Download the current config</h3>
+
+<p>If you followed my setup in <a href="https://runningit.se/blog/azure_hugo_ci/">Hugo github CI using azure devops</a>, you will also have a current setup.
+But since I&rsquo;m a lazy person and the developer of the plugin have created the feature lets download the current config of to Terrafrom</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">terraform import godaddy_domain_record.gd-runningit runningit.se</code></pre></div>
+<p>I got the import statment from the README of the terraform plugin.
+But in short godaddy_domain_record is the plugin, gd-runningit is a random name and runningit.se is my domain that tells the Godaddy API where to look.</p>
+
+<p>This will create a terraform.tfstate file that should look something like this:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#0ff;font-weight:bold">&#34;resources&#34;</span><span style="color:#f00">:</span> [
+    {
+      <span style="font-weight:bold">&#34;mode&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;managed&#34;</span>,
+      <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;godaddy_domain_record&#34;</span>,
+      <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;gd-runningit&#34;</span>,
+      <span style="font-weight:bold">&#34;provider&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;provider.godaddy&#34;</span>,
+      <span style="font-weight:bold">&#34;instances&#34;</span>: [
+        {
+          <span style="font-weight:bold">&#34;schema_version&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+          <span style="font-weight:bold">&#34;attributes&#34;</span>: {
+            <span style="font-weight:bold">&#34;domain&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;runningit.se&#34;</span>,
+            <span style="font-weight:bold">&#34;record&#34;</span>: [
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;185.199.108.153&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+              },
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;185.199.109.153&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+              },
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;185.199.110.153&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+              },
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;185.199.111.153&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+              },
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;www&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">3600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;CNAME&#34;</span>
+              },
+              {
+                <span style="font-weight:bold">&#34;data&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;_domainconnect.gd.domaincontrol.com&#34;</span>,
+                <span style="font-weight:bold">&#34;name&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;_domainconnect&#34;</span>,
+                <span style="font-weight:bold">&#34;priority&#34;</span>: <span style="color:#ff0;font-weight:bold">0</span>,
+                <span style="font-weight:bold">&#34;ttl&#34;</span>: <span style="color:#ff0;font-weight:bold">3600</span>,
+                <span style="font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;CNAME&#34;</span>
+              }
+            ]
+          },
+        }
+      ]
+    }
+  ]</code></pre></div>
+<p>I convert all this to terraform code and put it in to a file i call go_daddy.tf.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f00">provider</span> <span style="color:#0ff;font-weight:bold">&#34;godaddy&#34;</span> {
+}
+
+<span style="color:#f00">resource</span> <span style="color:#0ff;font-weight:bold">&#34;godaddy_domain_record&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;gd-runningit&#34;</span> {
+  <span style="color:#f00">domain</span>   <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;runningit.se&#34;</span>
+
+  <span style="color:#f00">record</span> {
+    <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;@&#34;</span>
+    <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+    <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;185.199.108.153&#34;</span>
+    <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">600</span>
+    <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+  }
+
+  <span style="color:#f00">record</span> {
+    <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;@&#34;</span>
+    <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+    <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;185.199.109.153&#34;</span>
+    <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">600</span>
+    <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+  }
+
+  <span style="color:#f00">record</span> {
+    <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;@&#34;</span>
+    <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+    <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;185.199.110.153&#34;</span>
+    <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">600</span>
+    <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+  }
+
+  <span style="color:#f00">record</span> {
+    <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;@&#34;</span>
+    <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;A&#34;</span>
+    <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;185.199.111.153&#34;</span>
+    <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">600</span>
+    <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+  }
+
+  <span style="color:#f00">record</span> {
+    <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;www&#34;</span>
+    <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;CNAME&#34;</span>
+    <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;@&#34;</span>
+    <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">3600</span>
+    <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+  }
+
+  <span style="color:#f00">record</span> {
+      <span style="color:#f00">name</span> <span style="color:#f00">=</span> <span style="font-weight:bold">&#34;_domainconnect&#34;</span>
+      <span style="color:#f00">data</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;_domainconnect.gd.domaincontrol.com&#34;</span>
+      <span style="color:#f00">priority</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">0</span>
+      <span style="color:#f00">ttl</span> <span style="color:#f00">=</span> <span style="color:#ff0;font-weight:bold">3600</span>
+      <span style="color:#f00">type</span> <span style="color:#f00">=</span> <span style="color:#0ff;font-weight:bold">&#34;CNAME&#34;</span>
+  }
+}</code></pre></div>
+<p>Time to apply the configuration</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#007f7f"># Make sure the everything looks okay</span>
+terraform plan
+
+<span style="color:#007f7f"># Apply the config</span>
+terraform apply</code></pre></div>
+<p>For updates and how to see my complete file look at my <a href="https://github.com/NissesSenap/BLOG_IAC/blob/master/go_daddy.tf">BLOG_IAC repo</a>.</p>
+
+<h2 id="future">Future</h2>
+
+<p>Okay so now we have a way to configure Godaddy, pipeline as code using Azure Pipelines.</p>
+
+<p>But we are still missing the configuration for GitHub and how do we setup the Azure Pipeline manual config that we have done.
+I don&rsquo;t know if I ever will handle the GitHub part in Terraform, it got a few chicken and egg issues and it&rsquo;s probably not worth the trouble.</p>
+
+<p>But I do want to handle the Azure devops part using Terraform. Currently there is no support for Azure devops and I reached out to the maintainers of Azure Terraform but it didn&rsquo;t seem like it was a high priority.
+But a nice guy pointed me to a <a href="https://github.com/mikaelkrief/terraform-provider-azuredevops">open-source project</a> by Mikael Krief that have started to do some testing with it.
+Currently he supports adding an Azure devops organization and adding Pipeline as Code through Terraform.
+But I don&rsquo;t want to use Terraform to handle the yaml code, I rather keep it in my own repo which is the standard for most repos.</p>
+
+<p>So in short I want the feature to be able to point the pipeline to witch Azure pipeline yaml file to use and in which repo.</p>
+
+<p>I reached out to him and I got the reply that he&rsquo;s working on the feature and I offered to help out with beta testing and documentation, sadly I can&rsquo;t help out with the coding since I still don&rsquo;t know go (it&rsquo;s on my todo, together with a lot of other things),
+so lets see what happens in the future.</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Doing random stuff within computers and devops.</p>
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'XYZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+  </body>
+
+</html>

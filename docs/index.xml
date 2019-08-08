@@ -13,19 +13,19 @@
     
     <item>
       <title>Infrastructure As Code Blog part 1 Godaddy with Terraform</title>
-      <link>https://runningit.se/posts/iac_blog_part1/</link>
+      <link>https://runningit.se/blog/iac_blog_part1/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://runningit.se/posts/iac_blog_part1/</guid>
+      <guid>https://runningit.se/blog/iac_blog_part1/</guid>
       <description>Background As you know if you have read my last blog entry  I use GitHub to host my static page and Azure Pipeline for CI/CD. I have chosen Godaddy to be my DNS provider, the biggest reason behind this is that Azure and Godaddy have a partnership and I want to keep things simple. Godaddy is also big enough for other people to develop nice Terraform plugins, something that is missing in the Swedish DNS providers i have looked in to.</description>
     </item>
     
     <item>
       <title>Hugo github CI using azure devops</title>
-      <link>https://runningit.se/posts/azure_hugo_ci/</link>
+      <link>https://runningit.se/blog/azure_hugo_ci/</link>
       <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://runningit.se/posts/azure_hugo_ci/</guid>
+      <guid>https://runningit.se/blog/azure_hugo_ci/</guid>
       <description>Basic requirements  Trigger CI system at PR (pull request) Give feedback to the user that the PR have passed When I merge the pull, automatically publish my updated blog.  The last one is already solved thanks to that i use GitHub static page to share my homepage.
 Tools My plan is to use the following tools:
  Azure Pipelines GitHub hub Hugo Yaspeller (to help me with my crappy spelling)  The reason why I chose Hugo as a static page generator is that I don&amp;rsquo;t want to use Jekyll (don&amp;rsquo;t like ruby) and it feels like a much more modern any way.</description>
@@ -44,10 +44,10 @@ This is mostly a way for me to save what I&amp;rsquo;m doing and if someone else
     
     <item>
       <title>First</title>
-      <link>https://runningit.se/posts/first/</link>
+      <link>https://runningit.se/blog/first/</link>
       <pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://runningit.se/posts/first/</guid>
+      <guid>https://runningit.se/blog/first/</guid>
       <description>Hello Internet So It&amp;rsquo;s time for me to get a blog.
 Heads up, I like to explain how I think when I write, so some parts might be a bit drawn out. But hopefully this place might be useful for you as well.
 I will mostly use this blog to write about IT but it&amp;rsquo;s possible I will mention something about running or any of my other interests.
