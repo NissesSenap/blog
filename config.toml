@@ -64,9 +64,9 @@ pygmentscodefencesguesssyntax = true
   series = "series"
   tag = "tags"
 
-# linkedin = "edvin-norling-54832135"
-# strava = "28887261"
-# email = "edvin.norling@gmail.com"
+# Overwrite posts to blogs, i don't like the posts url
+[permalinks]
+    posts = "/blog/:filename"
 
 [[params.social]]
     name = "Github"
@@ -106,7 +106,7 @@ pygmentscodefencesguesssyntax = true
         [[languages.en.menu.main]]
         name = "Blog"
         weight = 2
-        url = "/posts/"
+        url = "/blog/"
 
         #[[languages.en.menu.main]]
         #name = "Projects"
