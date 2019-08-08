@@ -5,11 +5,16 @@ draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-categories = ["about"]
+categories = ["About"]
 title = "First"
 description = "First"
-
 +++
+
+### Content
+
+- [Hello Internet](#hello-internet)
+- [What I have done](#what-i-have-done)
+- [What will happen in the future](#what-will-happen-in-the-future)
 
 ## Hello Internet
 
@@ -30,12 +35,12 @@ I started my work at a small IT company in Gothenburg called Zetup now named [No
 
 Until then I worked allot with:
 
-* Linux
-* Infrastructure As Code (IAC)
-* Monitoring
-* Python
-* HPC
-* CI/CD
+- Linux
+- Infrastructure As Code (IAC)
+- Monitoring
+- Python
+- HPC
+- CI/CD
 
 But in 2018 i joined [Alten](https://www.alten.se/) and started working more as a devops engineer as a consultant at Ericsson in an RND project called [CVC][cvc_link] helping out to send data from cars to the cloud.
 
@@ -52,11 +57,11 @@ After the summer of 2019 I'm joining [RedHat](https://www.redhat.com/) (IBM depe
 
 In the future I will most likely focus allot on:
 
-* Kubernetes
-* Openshift
-* cloud
-* CI/CD
-* IAC (Infrastructure As Code)
-* Linux
+- Kubernetes
+- Openshift
+- cloud
+- CI/CD
+- IAC (Infrastructure As Code)
+- Linux
 
 [cvc_link]: https://www.ericsson.com/en/internet-of-things/automotive/connected-vehicle-cloud
