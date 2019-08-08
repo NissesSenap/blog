@@ -256,6 +256,23 @@ terraform apply
 
 For updates and how to see my complete file look at my [BLOG_IAC repo][BLOG_IAC].
 
+## Future
+
+Okay so now we have a way to configure Godaddy, pipeline as code using Azure Pipelines.
+
+But we are still missing the configuration for GitHub and how do we setup the Azure Pipeline manual config that we have done.
+I don't know if I ever will handle the GitHub part in Terraform, it got a few chicken and egg issues and it's probably not worth the trouble.
+
+But I do want to handle the Azure devops part using Terraform. Currently there is no support for Azure devops and I reached out to the maintainers of Azure Terraform but it didn't seem like it was a high priority.
+But a nice guy pointed me to a [open-source project][TF_Azure_devops] by Mikael Krief that have started to do some testing with it.
+Currently he supports adding an Azure devops organization and adding Pipeline as Code through Terraform.
+But I don't want to use Terraform to handle the yaml code, I rather keep it in my own repo which is the standard for most repos.
+
+So in short I want the feature to be able to point the pipeline to witch Azure pipeline yaml file to use and in which repo.
+
+I reached out to him and I got the reply that he's working on the feature and I offered to help out with beta testing and documentation, sadly I can't help out with the coding since I still don't know go (it's on my todo, together with a lot of other things),
+so lets see what happens in the future.
+
 [IAC_oreilly]: http://shop.oreilly.com/product/0636920039297.do
 [github_gd_issue]: https://github.com/hashicorp/terraform/issues/3673
 [terrafrom_gd]: https://github.com/n3integration/terraform-godaddy
@@ -263,3 +280,4 @@ For updates and how to see my complete file look at my [BLOG_IAC repo][BLOG_IAC]
 [github_terraform_install_gd_api]: https://github.com/n3integration/terraform-godaddy#api-key
 [gd_dev_doc]: https://developer.godaddy.com/getstarted
 [BLOG_IAC]: https://github.com/NissesSenap/BLOG_IAC/blob/master/go_daddy.tf
+[TF_Azure_devops]: https://github.com/mikaelkrief/terraform-provider-azuredevops
